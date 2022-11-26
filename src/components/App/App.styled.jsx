@@ -5,7 +5,7 @@ const AppWrap = styled.div`
   margin: 0 auto;
   flex-direction: column;
   background-color: #8bf3dd;
-  width: 300px;
+  width: 400px;
 `;
 const PageTitle = styled.h1`
   text-align: center;

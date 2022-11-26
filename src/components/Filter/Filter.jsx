@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { filterContacts } from 'redux/contactsSlice';
+import { filterContacts } from '../../redux/contactsSlice';
 import { getFilter } from 'redux/selectors';
 
 import { FormInput, FormLabel } from '../Filter/Filter.styled';
@@ -7,9 +7,10 @@ import { FormInput, FormLabel } from '../Filter/Filter.styled';
 export const Filter = () => {
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
-
+  console.log(filter);
   const changeFilter = evt => {
-    dispatch(filterContacts(evt.currentTarget.value.trim()));
+    console.log(evt.target.value);
+    dispatch(filterContacts(evt.target.value.trim()));
   };
 
   return (
