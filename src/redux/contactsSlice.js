@@ -14,7 +14,12 @@ const contactsSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
-    filter: 'mars',
+    filter: '',
+  },
+  reducers: {
+    filterContacts: (state, { payload }) => {
+      state.filter = payload;
+    },
   },
   extraReducers: {
     [fetchContacts.pending]: handlePending,
@@ -41,13 +46,6 @@ const contactsSlice = createSlice({
       state.items.splice(index, 1);
     },
     [deleteContact.rejected]: handleRejected,
-  },
-  reducers: {
-    filterContacts: {
-      reducer(state, action) {
-        return (state.filter = action.payload);
-      },
-    },
   },
 });
 export const { filterContacts } = contactsSlice.actions;
