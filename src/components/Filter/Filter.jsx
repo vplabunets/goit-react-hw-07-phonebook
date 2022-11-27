@@ -7,7 +7,6 @@ import { FormInput, FormLabel } from '../Filter/Filter.styled';
 export const Filter = () => {
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
-  console.log(filter);
   const changeFilter = evt => {
     console.log(evt.target.value);
     dispatch(filterContacts(evt.target.value.trim()));
